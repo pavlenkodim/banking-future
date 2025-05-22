@@ -1,0 +1,79 @@
+/* src/pages/NotFound.css */
+
+/* Отключаем горизонтальный скролл во всём документе */
+html, body {
+    overflow-x: hidden;
+  }
+  
+  /* Сбрасываем стили только внутри 404 */
+  .notfound-root,
+  .notfound-root * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Делам ширину ровно по viewport и центруем */
+  .notfound-root {
+    position: relative;
+    width: 100vw;                              /* полная ширина экрана */
+    margin-left: calc(50% - 50vw);             /* смещаем влево на половину разницы */
+    margin-right: calc(50% - 50vw);            /* симметрично вправо */
+    height: 100vh;                             /* полная высота экрана */
+    background: #050505;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  /* Большой 404 */
+  .notfound-root .error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 750px;
+    font-weight: 900;
+    transform: translate(-50%, 800px);
+    animation: errorAnim 1.5s ease forwards;
+  }
+  
+  /* Картинка кота */
+  .notfound-root .img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1920px;
+    width: 100%;
+    animation: catAnim 1.5s ease forwards;
+  }
+  
+  .notfound-root .img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Текст «ОКАК» */
+  .notfound-root .okak {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 900;
+    font-size: 115px;
+  }
+  
+  /* Анимации */
+  @keyframes catAnim {
+    from { transform: translate(-50%, 50%); }
+    to   { transform: translate(-50%, 0); }
+  }
+  
+  @keyframes errorAnim {
+    from { transform: translate(-50%, 800px); }
+    to   { transform: translate(-50%, -400px); }
+  }
+  
